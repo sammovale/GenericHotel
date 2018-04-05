@@ -1,0 +1,39 @@
+div.inner { /*makes the search and log in in the middle*/
+	width: 300px;
+	margin: auto;
+	border: none;
+	margin-top: 200px;
+}
+
+input.search {/*moves the input to where it needs to be*/
+ width: 100%;
+margin: auto;
+text-align: center;
+
+}
+
+button.signin { /*Moves the signin button to the middle*/
+	margin: 0px 99.383px
+}
+
+
+.center { /*moves text to center*/
+	text-align: center;
+}
+ 
+span.fa-search { /*moves the search image into the input bar*/
+	position: absolute;
+	top: 30px
+	left: 7px;
+	padding: 2px;
+
+	color: darkgrey;
+
+}
+
+.pic { /*adjusts the google images*/
+	position: absolute;
+	padding-left: 110px;
+	padding-top: 5px;
+	font-size: 50px;
+}
