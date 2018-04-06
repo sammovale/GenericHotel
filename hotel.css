@@ -1,40 +1,56 @@
-div.inner { /*makes the search and log in in the middle*/
-	width: 300px;
+body{
+	font-family: 'Quattrocento', serif;
+}
+
+button.searchButton{
+	float: right;
+
+}
+
+/* formatting for the searchbar contents to be centered*/
+div.searchBarIndex { 
+	width: 70%;
 	margin: auto;
 	border: none;
-	margin-top: 200px;
+	margin-top: 5%;
+	text-align: center;
 }
 
 input.search {/*moves the input to where it needs to be*/
- width: 100%;
-margin: auto;
-text-align: center;
-
+	width: 80%;
+	margin-bottom: 5%;
+	text-align: center;
+	height: 50px;
+	font-size: 18px;
 }
 
-button.signin { /*Moves the signin button to the middle*/
-	margin: 0px 99.383px
-}
 
-.webTitle{ /*moves text to center*/
+
+h1.webTitle{ /*moves text to center*/
 	text-align: center;
 	margin-top: 10%;
 	font-size: 50px;
 }
- 
-span.fa-search { /*moves the search image into the input bar*/
-	position: absolute;
-	top: 30px
-	left: 7px;
-	padding: 2px;
 
-	color: darkgrey;
-
+p.webTitle{
+	text-align:  center;
 }
+
 
 .pic { /*adjusts the google images*/
 	position: absolute;
 	padding-left: 110px;
 	padding-top: 5px;
 	font-size: 50px;
+}
+
+.signin{
+    background-color: lightblue; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
