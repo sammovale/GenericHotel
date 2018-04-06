@@ -16,9 +16,10 @@ button.signin { /*Moves the signin button to the middle*/
 	margin: 0px 99.383px
 }
 
-
-.center { /*moves text to center*/
+.webTitle{ /*moves text to center*/
 	text-align: center;
+	margin-top: 10%;
+	font-size: 50px;
 }
  
 span.fa-search { /*moves the search image into the input bar*/
