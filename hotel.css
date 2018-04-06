@@ -2,11 +2,6 @@ body{
 	font-family: 'Quattrocento', serif;
 }
 
-button.searchButton{
-	float: right;
-
-}
-
 /* formatting for the searchbar contents to be centered*/
 div.searchBarIndex { 
 	width: 70%;
@@ -24,7 +19,17 @@ input.search {/*moves the input to where it needs to be*/
 	font-size: 18px;
 }
 
+.searchbutton{
+    background-color: lightblue; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 
+}
 
 h1.webTitle{ /*moves text to center*/
 	text-align: center;
@@ -38,9 +43,7 @@ p.webTitle{
 
 
 .pic { /*adjusts the google images*/
-	position: absolute;
-	padding-left: 110px;
-	padding-top: 5px;
+
 	font-size: 50px;
 }
 
