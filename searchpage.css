@@ -1,0 +1,132 @@
+body {
+    font-family: Arial;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    
+    float: left;
+    
+     width: 80%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+
+    border-right: none;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 10px 20px 10px 40px;
+   
+}
+
+form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+  
+    cursor: pointer;
+    
+}
+
+form.example button:hover {
+    background: #0b7dda;
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.datecol{
+    height: 30px ;
+    width: 32.78%;
+    margin:5px 0px 1px 0px;
+    font-size:110%;
+    border-radius:2px;
+
+}
+.header img {
+  
+  width: 100px;
+  height: 100px;
+  background: #555;
+ 
+  
+}
+
+.HeaderLogo {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    padding:0px 50px 20px 50px;
+    
+}
+
+.Map {
+    width:100%;
+    height:100px;
+    border: 1px solid grey;
+    margin: 10px 0px 0px 0px;
+    background-color:white;
+    
+}
+.SearchBar {
+    border: 0px solid grey;
+    background-color:#37454d;
+    width:100%;
+    padding: 10px 0px 10px 0px;
+    margin: 0px;
+
+}
+.sort  {
+    height: 20px ;
+    width: 15%;
+    margin:6px;
+    font-size:90%;
+    border-radius:2px;
+
+}
+.right {
+    text-align:right;
+
+}
+.background{
+    background-color:grey;
+    height:500px;
+}
+
+.HotelResult {
+    width:100%;
+    height:100px;
+    border: 1px solid grey;
+    margin: 10px 0px 0px 0px;
+    background-color:white;
+    padding:0px;
+}
+.list {
+    list-style: none;
+        margin: 0;
+    padding: 0;
+}
+.order {
+    display: block;
+    
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+}
