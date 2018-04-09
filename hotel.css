@@ -33,7 +33,7 @@ input.search {/*moves the input to where it needs to be*/
     background-color: lightblue;
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 15px 3%; /* used percentage for the width so this is adaptive for mobile screens */
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -154,6 +154,47 @@ form.example::after {
 
 }
 
+/*START SEARCH RESULT STYLING */
+.searchResult{
+    background-color: white;
+    margin: 1%;
+    height: 180px;
+}
+
+.searchResultImage{
+    width: 170px;
+    height: 90%;
+    margin: 1%;
+    float: left;
+}
+
+.searchResultTitle{
+    margin-left: 2%;
+    padding-top: 2%;
+    margin-right: 2%;
+    text-align: center;
+    color: darkslategrey;
+}
+
+.searchResultButton{
+    background-color: lightblue;
+    border: none;
+    color: white;
+    padding: 80px 5%; /* used percentage for the width so this is adaptive for mobile screens */
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    float: right;
+    display: inline;
+}
+
+.searchResultDescription{
+
+    margin-left: 20%;
+    margin-right: 20%;
+    color: slategrey;
+}
+/*END SEARCH RESULT STYLING */
 
 .loginForm {
     margin: 0 auto;
