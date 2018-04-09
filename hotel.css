@@ -10,6 +10,13 @@ h2{
     text-align: center;
 }
 
+/* for responsive web design on the mobile front remove the margin */
+@media only screen and (max-width: 600px) {
+    .content {
+        width: 95% !important;
+    }
+}
+
 /* formatting for the searchbar contents to be centered*/
 div.searchBarIndex { 
 	width: 70%;
@@ -193,6 +200,11 @@ form.example::after {
     margin-left: 20%;
     margin-right: 20%;
     color: slategrey;
+
+    /* This is to prevent the text from spilling over the div on small screens */
+    height: 55%;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 /*END SEARCH RESULT STYLING */
 
