@@ -6,6 +6,9 @@ body{
     background-color: #f2f2f2;
     margin: 0px;
 }
+h2{
+    text-align: center;
+}
 
 /* formatting for the searchbar contents to be centered*/
 div.searchBarIndex { 
@@ -170,6 +173,22 @@ form.example::after {
 
 }
 
+
+.loginForm {
+    margin: 0 auto;
+    text-align: center;
+    width: 40%;
+    margin-top: 5%;
+}
+
+
+.login{
+    float: left;
+}
+
+.facebook{
+    float: right;
+}
 
 
 /* ----------- Hotel viewing part ----------- */
