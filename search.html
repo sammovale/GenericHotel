@@ -12,66 +12,47 @@
 
 <body>
 
-<div class="navBar">
-  <a href="index.html" id="noUnderline"><h2> The Generic Hotel Search Site</h2></a>
-</div>
+  <div class="navBar">
+    <a href="index.html" id="noUnderline"><h2> The Generic Hotel Search Site</h2></a>
+  </div>
+
+  <!-- All the content for the search webpage -->
+  <div class="content">
+    <form class="example " action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+
+    <!-- The date selectors and style of room -->
+    <div class="datecol">
+
+      <input class="dateInput" type="date" value="2018-03-23">
+      <input class="dateInput" type="date" value="2018-03-24">
+
+      <select class="dateInput">
+        <option value="single room">single room</option>
+        <option value="dobule room">double room</option>
+        <option value="family room">Family room</option>
+        <option value="multiple room">multiple room</option>
+      </select>
+
+   </div>
+
+   <!-- Show the map with relavent markers -->
+   <div class="Map">
+     <p>Map</p>
+   </div>
+
+   <div class="searchOrder">
+      <select class="sort">
+        <option value="popularity">Popularity</option>
+        <option value="price">Price</option>
+        <option value="rating">Rating</option>
+        <option value="destination">Destination</option>
+      </select>
+    </div>
 
 
-<div class="content">
-<form class="example " action="/action_page.php">
-  <input type="text" placeholder="Search.." name="search">
-  <button type="submit"><i class="fa fa-search"></i></button>
-</form>
-
-<div class="datecol">
-
-  <input class="dateInput" type="date" value="2018-03-23">
-  <input class="dateInput" type="date" value="2018-03-24">
-
-  <select class="dateInput">
-    <option value="single room">single room</option>
-    <option value="dobule room">double room</option>
-    <option value="family room">Family room</option>
-    <option value="multiple room">multiple room</option>
-  </select>
-
-</div>
-
-<div class="Map">
-<p>Map</p>
-</div>
-
-<div class="right">
-<select class="sort">
-  <option value="volvo">Popularity</option>
-  <option value="saab">Price</option>
-  <option value="opel">Rating</option>
-  <option value="audi">Destination</option>
-</select>
-</div>
-
-<ol class="order">
-<li class="list">
-<div class="HotelResult">
-
-
-</div>
-</li>
-<li class="list">
-<div class="HotelResult">
-
-
-</div>
-</li>
-<li class="list">
-<div class="HotelResult">
-
-
-</li>
-</ol>
-</div>
-
-</div>
-
+  </div>
 </body>
 </html> 
