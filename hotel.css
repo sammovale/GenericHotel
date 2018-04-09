@@ -3,7 +3,7 @@
 
 body{
 	font-family: 'Quattrocento', serif;
-    background-color: #c8d8f3;
+    background-color: #f2f2f2;
     margin: 0px;
 }
 
@@ -25,7 +25,7 @@ input.search {/*moves the input to where it needs to be*/
 }
 
 .searchbutton{
-    background-color: lightblue; /* Green */
+    background-color: lightblue;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -69,12 +69,15 @@ p.webTitle{
 /* This is for the heading for the website across all pages except the index page */
 .navBar{
     text-align: center;
-    background-color: #f4224c;
+    background-color: #8bdb70;
     padding: 0.3%;
     width: 100%;
     margin-bottom: 1%;
 }
 
+#noUnderline{
+    text-decoration: none; /* This is to remove the underline since the 'logo' is also a link to the homepage */
+}
 
 * {
     box-sizing: border-box;
@@ -86,14 +89,13 @@ form.example input[type=text] {
     
     float: left;
     
-     width: 80%;
+    width: 80%;
     box-sizing: border-box;
     border: 2px solid #ccc;
 
     border-right: none;
     font-size: 16px;
     background-color: white;
-    background-image: url('searchicon.png');
     background-position: 10px 10px; 
     background-repeat: no-repeat;
     padding: 10px 20px 10px 40px;
@@ -104,18 +106,16 @@ form.example button {
     float: left;
     width: 20%;
     padding: 10px;
-    background: #2196F3;
+    background: #add8e6;
     color: white;
     font-size: 17px;
-    border: 1px solid grey;
     border-left: none;
-  
     cursor: pointer;
     
 }
 
 form.example button:hover {
-    background: #0b7dda;
+    background: #8AACB8;
 }
 
 form.example::after {
@@ -125,26 +125,28 @@ form.example::after {
 }
 
 .datecol{
-    height: 30px ;
-    width: 32.78%;
-    margin:5px 0px 1px 0px;
-    font-size:110%;
+    height: 30px;
+    margin-top: 1%;
+    margin-bottom: 1%;
     border-radius:2px;
+}
 
+.dateInput{
+    font-size: 120%;
+    width: 30%;
+    text-align: center;
 }
 
 
-.HeaderLogo {
+.content {
     margin: 0 auto;
     text-align: center;
     width: 70%;
-    padding:0px 50px 20px 50px;
     
 }
 
 .Map {
-    width:100%;
-    height:100px;
+    height: 200px;
     border: 1px solid grey;
     margin: 10px 0px 0px 0px;
     background-color:white;

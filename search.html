@@ -1,52 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="hotel.css">
-<link rel="stylesheet" type="text/js" href="hotel.js">
-<link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
+  <title>Search</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="hotel.css">
+  <link rel="stylesheet" type="text/js" href="hotel.js">
+  <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
 </head>
+
 <body>
 
 <div class="navBar">
-  <h2> The Generic Hotel Search Site</h2>
+  <a href="index.html" id="noUnderline"><h2> The Generic Hotel Search Site</h2></a>
 </div>
 
 
-<div class="HeaderLogo">
-<div>
+<div class="content">
 <form class="example " action="/action_page.php">
   <input type="text" placeholder="Search.." name="search">
   <button type="submit"><i class="fa fa-search"></i></button>
 </form>
-</div>
 
-<div>
-<input class="datecol" type="date" id="myDate" value="2018-03-23">
-<input class="datecol" type="date" id="myDate" value="2018-03-24">
-<select class="datecol">
-  <option value="volvo">single room</option>
-  <option value="saab">double room</option>
-  <option value="opel">Family room</option>
-  <option value="audi">multiple room</option>
-</select>
+<div class="datecol">
+
+  <input class="dateInput" type="date" value="2018-03-23">
+  <input class="dateInput" type="date" value="2018-03-24">
+
+  <select class="dateInput">
+    <option value="single room">single room</option>
+    <option value="dobule room">double room</option>
+    <option value="family room">Family room</option>
+    <option value="multiple room">multiple room</option>
+  </select>
+
 </div>
 
 <div class="Map">
 <p>Map</p>
 </div>
-</div>
 
 <div class="right">
 <select class="sort">
-  <option value="volvo">popularity</option>
+  <option value="volvo">Popularity</option>
   <option value="saab">Price</option>
   <option value="opel">Rating</option>
   <option value="audi">Destination</option>
 </select>
 </div>
-<div class="HeaderLogo">
 
 <ol class="order">
 <li class="list">
@@ -65,9 +67,10 @@
 <div class="HotelResult">
 
 
-</div>
 </li>
 </ol>
+</div>
+
 </div>
 
 </body>
