@@ -178,7 +178,14 @@ form.example::after {
     margin: 0 auto;
     text-align: center;
     width: 40%;
-    margin-top: 5%;
+    margin-top: 2%;
+}
+
+.signupForm{
+     margin: 0 auto;
+    text-align: center;
+    width: 40%;
+    margin-top: 3%;
 }
 
 
@@ -188,6 +195,14 @@ form.example::after {
 
 .facebook{
     float: right;
+    margin-top: 5%;
+}
+
+.signupDivider{
+     margin: 0 auto;
+    text-align: center;
+    width: 40%;
+    margin-top: 2%;
 }
 
 
