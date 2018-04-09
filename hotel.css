@@ -55,8 +55,12 @@ p.webTitle{
 	font-size: 50px;
 }
 
+/* make all the buttons change to a dark shade when hovered over */
+button:hover{
+        background-color: #8AACB8;
+}
 .signin{
-    background-color: lightblue; /* Green */
+    background-color: lightblue;
     border: none;
     color: white;
     padding: 15px 32px;
