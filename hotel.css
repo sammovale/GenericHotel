@@ -3,6 +3,8 @@
 
 body{
 	font-family: 'Quattrocento', serif;
+    background-color: #c8d8f3;
+    margin: 0px;
 }
 
 /* formatting for the searchbar contents to be centered*/
@@ -60,7 +62,19 @@ p.webTitle{
     display: inline-block;
     font-size: 16px;
 }
+
+
 /* ----------- Search page part ----------- */
+
+/* This is for the heading for the website across all pages except the index page */
+.navBar{
+    text-align: center;
+    background-color: #f4224c;
+    padding: 0.3%;
+    width: 100%;
+    margin-bottom: 1%;
+}
+
 
 * {
     box-sizing: border-box;
@@ -118,14 +132,7 @@ form.example::after {
     border-radius:2px;
 
 }
-.header img {
-  
-  width: 100px;
-  height: 100px;
-  background: #555;
- 
-  
-}
+
 
 .HeaderLogo {
     margin: 0 auto;
@@ -162,10 +169,6 @@ form.example::after {
 .right {
     text-align:right;
 
-}
-.background{
-    background-color:grey;
-    height:80%;
 }
 
 .HotelResult {
