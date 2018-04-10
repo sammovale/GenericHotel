@@ -296,7 +296,7 @@ h3{
 }
 
 .hotelMainDescription{
-    margin: 4%;
+    margin: 3%;
 }
 
 .hotelFeaturesTitle{
@@ -307,4 +307,11 @@ h3{
 .hoteFeaturesList{
     margin-left: 30%;
     margin-right: 30%;
+    margin-bottom: 3%;
+}
+
+.hotelSubDescription{
+    margin-bottom: 1%;
+    text-decoration: underline;
+    color: darkslategrey;
 }
