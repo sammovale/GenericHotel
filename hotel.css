@@ -110,11 +110,6 @@ button:hover{
 }
 
 
-
-.searchbarSearch{
-
-}
-
 form.example button:hover {
     background: #8AACB8;
 }
@@ -143,7 +138,6 @@ form.example::after {
     margin: 0 auto;
     text-align: center;
     width: 70%;
-    
 }
 
 
@@ -154,14 +148,7 @@ form.example::after {
         background-color: grey;
 }
 
-.SearchBar {
-    border: 0px solid grey;
-    background-color:#37454d;
-    width:100%;
-    padding: 10px 0px 10px 0px;
-    margin: 0px;
 
-}
 .sort  {
     width: 10%;
     margin:6px;
@@ -172,7 +159,7 @@ form.example::after {
 
 .searchOrder {
     margin-top: 1%;
-    margin-bottom: 8%;
+    margin-bottom: 6%;
     padding-left: 3%;
     padding-right: 3%;
 }
@@ -286,21 +273,16 @@ h3{
     color: darkslategrey;
     text-decoration: underline;
     text-align: left;
-    margin-bottom: 3%;
-    margin-left: 1%;
-
+    margin-bottom: 2%;
+    margin-left: 4%;
 }
 
 .hotelMainPicture{
-    display: inline-grid;
     width: 350px;
     height: 350px;
     border-style: solid;
     border-color: black;
     border-width: 2px;
-}
-.hotelImageDiv{
-    float: left;
 }
 
 .hotelDetails{
