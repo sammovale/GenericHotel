@@ -1,3 +1,4 @@
+//This is for the map on the search view. Will need to interface with the database to change the lat and lng values for the markers
 function initMap() {
         var uluru = {lat: -25.363, lng: 131.044};
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -11,6 +12,7 @@ function initMap() {
         });
 }
 
+//This is for the second map on the hotel view
 function initMap2() {
         var uluru = {lat: -25.363, lng: 131.044};
         var map = new google.maps.Map(document.getElementById('map2'), {
