@@ -282,3 +282,47 @@ h3{
 
 
 /* ----------- Hotel viewing part ----------- */
+.hotelMainTitle{
+    color: darkslategrey;
+    text-decoration: underline;
+    text-align: left;
+    margin-bottom: 3%;
+    margin-left: 1%;
+
+}
+
+.hotelMainPicture{
+    display: inline-grid;
+    width: 350px;
+    height: 350px;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+}
+.hotelImageDiv{
+    float: left;
+}
+
+.hotelDetails{
+    background-color: white;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    height: 350px;
+    float: right;
+    width: 60%;
+}
+
+.hotelMainDescription{
+    margin: 4%;
+}
+
+.hotelFeaturesTitle{
+    margin: 0;
+    color: darkslategrey;
+    font-size: 120%;
+}
+.hoteFeaturesList{
+    margin-left: 30%;
+    margin-right: 30%;
+}
