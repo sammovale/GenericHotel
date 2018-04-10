@@ -171,10 +171,9 @@ form.example::after {
 }
 
 .searchOrder {
-    margin-top: 1%;
-    margin-bottom: 6%;
     padding-left: 3%;
     padding-right: 3%;
+    height: 35px;
 }
 .numberResults{
     float: left;
@@ -183,7 +182,7 @@ form.example::after {
 
 .filters{
     width: 16%;
-    height: 278px;
+    height: 276px;
     text-align: center;
     float: left;
     margin-right: 2%;
