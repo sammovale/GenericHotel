@@ -153,10 +153,16 @@ form.example::after {
     width: 10%;
     margin:6px;
     font-size:90%;
+    float: right;
+    color: slategrey;
 }
-.searchOrder {
-    text-align:right;
 
+.searchOrder {
+    margin-bottom: 5%;
+}
+.numberResults{
+    float: left;
+    color: slategrey;
 }
 
 .filters{

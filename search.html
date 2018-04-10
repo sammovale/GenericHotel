@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <title>Search</title>
   <meta charset="UTF-8">
@@ -8,17 +7,13 @@
   <link rel="stylesheet" type="text/css" href="hotel.css">
   <link rel="stylesheet" type="text/js" href="hotel.js">
   <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
-
 </head>
 
 <body>
-
   <!-- Navigation bar with title and buttons for signed in users if signed in -->
   <div class="navBar">
     <a href="index.html" id="noUnderline"><h2> The Generic Hotel Search Site</h2></a>
   </div>
-
-
 
   <!-- All the content for the search webpage -->
   <div class="content">
@@ -28,7 +23,6 @@
     </div>
     <!-- The date selectors and style of room -->
     <div class="datecol">
-
       <input class="dateInput" type="date" value="2018-03-23">
       <input class="dateInput" type="date" value="2018-03-24">
 
@@ -39,6 +33,7 @@
         <option value="multiple room">multiple room</option>
       </select>
     </div>
+
 
       <!-- The filters pane on the right allowing for finer adjustment of the search query -->
   <div class="filters">
@@ -58,7 +53,6 @@
     <div id="map"></div>
     <script src="hotel.js">initMap();</script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJGrX4LzU7U1oy41Ii93jZHpSQGhFWTw8&callback=initMap"></script>
-    
 
    <div class="searchOrder">
       <select class="sort">
@@ -67,7 +61,14 @@
         <option value="rating">Rating</option>
         <option value="destination">Destination</option>
       </select>
+
+      <div class="numberResults">
+        <p class="resultNumber">Showing 1000 Results</p>
+      </div>
+
     </div>
+
+ 
 
 
     <div class="searchResult">
@@ -90,7 +91,6 @@
       <h3 class="searchResultTitle">Mantra Hindmarsh Square</h3>
       <p class="searchResultDescription">The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you!</p>
     </div>
-
 
   </div>
 </body>
