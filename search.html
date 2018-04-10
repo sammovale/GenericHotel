@@ -13,9 +13,12 @@
 
 <body>
 
+  <!-- Navigation bar with title and buttons for signed in users if signed in -->
   <div class="navBar">
     <a href="index.html" id="noUnderline"><h2> The Generic Hotel Search Site</h2></a>
   </div>
+
+
 
   <!-- All the content for the search webpage -->
   <div class="content">
@@ -35,8 +38,19 @@
         <option value="family room">Family room</option>
         <option value="multiple room">multiple room</option>
       </select>
+    </div>
 
-   </div>
+      <!-- The filters pane on the right allowing for finer adjustment of the search query -->
+  <div class="filters">
+    <h3>Extra Filters</h3>
+      <h4>Price Range</h4>
+      <input type="range" min="1" max="100" value="50" class="priceRange">
+      <h4>Hotel Features</h4>
+      <form>
+        <input type="checkbox" name="vehicle" value="SwimmingPool">Swimming Pool<br>
+        <input type="checkbox" name="vehicle" value="ValletParking">Vallet Parking<br>
+      </form>
+  </div>
 
    <!-- Show the map with relavent markers -->
     <div id="map"></div>
