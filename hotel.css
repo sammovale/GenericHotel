@@ -155,6 +155,7 @@ form.example::after {
     margin: 0 auto;
     text-align: center;
     width: 70%;
+    max-width: 1300px;
 }
 
 
