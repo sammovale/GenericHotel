@@ -78,10 +78,14 @@ h1.webTitle{ /*moves text to center*/
 	text-align: center;
 	margin-top: 10%;
 	font-size: 50px;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 p.webTitle{
 	text-align:  center;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 
