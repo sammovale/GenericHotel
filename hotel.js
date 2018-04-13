@@ -4,7 +4,7 @@ var searchNumber = 3;
 //create a hotelStruct/object that will be used but replaced with a struct that grabs data from the database
 var hotelStruct = {title:"Mantra Hindmarsh Square", description:"The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.",
                     key:"1"
-}
+};
 
 //listen for events
 $(document).ready(function(){
@@ -14,7 +14,9 @@ $(document).ready(function(){
   });
 
   $(".resultNumber").text("Showing "+searchNumber+" Results");
+
 });
+
 
 
 //This is for the map on the search view. Will need to interface with the database to change the lat and lng values for the markers
@@ -51,7 +53,7 @@ function addHotel(hotelData){
   //build the structure for the searchResult
   $(".content").append("<div class='searchResult' id='result"+searchNumber+"'>");
   //where searchNumber is this will be replaced with the UDID from the database from the SQL query
-  $("#result"+searchNumber).append("<a href='hotel.html'><button type='submit' class='searchResultButton'>View Rooms</button></a>"); 
+  $("#result"+searchNumber).append("<button type='submit' class='searchResultButton' onclick='window.location.href=' search.html''>View Rooms</button>"); 
   $("#result"+searchNumber).append("<img src='hotel"+hotelData.key+".jpg' class='searchResultImage'>");
 
   $("#result"+searchNumber).append("<h3 class='searchResultTitle'>"+hotelData.title+"</h3>");
