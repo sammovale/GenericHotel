@@ -1,15 +1,19 @@
+//use search number at the moment but will most likely change to a unique ID/key in the database that will be refrenced 
 var searchNumber = 0;
+
+//create a hotelStruct/object that will be used but replaced with a struct that grabs data from the database
+var hotelStruct = {title:"Mantra Hindmarsh Square", description:"The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.",
+                    key:"1"
+}
 
 //listen for events
 $(document).ready(function(){
   //if the search button is clicked run the addHotel function for now
-  $(".searchbutton").click(function(){
-   addHotel();
+  $("#searchData").click(function(){
+   addHotel(hotelStruct);
   });
 
 });
-
-
 
 
 //This is for the map on the search view. Will need to interface with the database to change the lat and lng values for the markers
@@ -42,16 +46,15 @@ function initMap2() {
 
 //this function will add a new hotel that will grabbed from the database query and show it in the search.html page
 //at the moment this is activated when the search button is pressed on the search.html
-function addHotel(){
+function addHotel(hotelData){
   //build the structure for the searchResult
   $(".content").append("<div class='searchResult' id='result"+searchNumber+"'>");
-
-  //add the button
-  //this will need to have the searchNumber also added later
+  //where searchNumber is this will be replaced with the UDID from the database from the SQL query
   $("#result"+searchNumber).append("<a href='hotel.html'><button type='submit' class='searchResultButton'>View Rooms</button></a>"); 
-  $("#result"+searchNumber).append("<img src='hotel1.jpg' class='searchResultImage'>");
-  $("#result"+searchNumber).append("<h3 class='searchResultTitle'>Mantra Hindmarsh Square</h3>");
-  $("#result"+searchNumber).append("<p class='searchResultDescription'>The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.</p>");
+  $("#result"+searchNumber).append("<img src='hotel"+hotelData.key+".jpg' class='searchResultImage'>");
+
+  $("#result"+searchNumber).append("<h3 class='searchResultTitle'>"+hotelData.title+"</h3>");
+  $("#result"+searchNumber).append("<p class='searchResultDescription'>"+hotelData.description+"</p>");
 
   $(".content").append("</div>");
 
