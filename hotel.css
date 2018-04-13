@@ -63,7 +63,7 @@ input.search {/*moves the input to where it needs to be*/
 }
 
 .searchbutton{
-    background-color: lightblue;
+    background-color: #1187ee;
     border: none;
     color: white;
     padding: 15px 3%; /* used percentage for the width so this is adaptive for mobile screens */
@@ -71,7 +71,6 @@ input.search {/*moves the input to where it needs to be*/
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-
 }
 
 h1.webTitle{ /*moves text to center*/
@@ -96,10 +95,10 @@ p.webTitle{
 
 /* make all the buttons change to a dark shade when hovered over */
 button:hover{
-        background-color: #8AACB8;
+        background-color: #0f79d7;
 }
 .signin{
-    background-color: lightblue;
+    background-color: #1187ee;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -233,7 +232,7 @@ h3{
 }
 
 .searchResultButton{
-    background-color: lightblue;
+    background-color: #1187ee;
     border: none;
     color: white;
     padding: 81px 5%; /* used percentage for the width so this is adaptive for mobile screens */
