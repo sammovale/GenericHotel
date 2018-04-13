@@ -115,7 +115,7 @@ button:hover{
 /* This is for the heading for the website across all pages except the index page */
 .navBar{
     text-align: center;
-    background-color: #8bdb70;
+    background-color: #3c9df2;
     padding: 0.05%;
     width: 100%;
     margin-bottom: 1%;
@@ -124,6 +124,11 @@ button:hover{
 
 #noUnderline{
     text-decoration: none; /* This is to remove the underline since the 'logo' is also a link to the homepage */
+    color: white;
+}
+
+#noUnderLine:visited{
+    color: black;
 }
 
 
