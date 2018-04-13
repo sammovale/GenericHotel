@@ -1,5 +1,5 @@
 //use search number at the moment but will most likely change to a unique ID/key in the database that will be refrenced 
-var searchNumber = 0;
+var searchNumber = 3;
 
 //create a hotelStruct/object that will be used but replaced with a struct that grabs data from the database
 var hotelStruct = {title:"Mantra Hindmarsh Square", description:"The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.",
@@ -13,6 +13,7 @@ $(document).ready(function(){
    addHotel(hotelStruct);
   });
 
+  $(".resultNumber").text("Showing "+searchNumber+" Results");
 });
 
 
@@ -60,6 +61,8 @@ function addHotel(hotelData){
 
   //add one to the counter to keep track of the number of posts and which ones are what
   searchNumber = searchNumber+1;
+  $(".resultNumber").text("Showing "+searchNumber+" Results");
+
 }
 
 
