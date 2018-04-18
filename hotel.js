@@ -76,7 +76,7 @@ function addRoom(roomData){
   //build the structure for the searchResult
   $(".content").append("<div class='searchResult' id='result"+searchNumber+"'>");
   //where searchNumber is this will be replaced with the UDID from the database from the SQL query
-  $("#result"+searchNumber).append("<button type='submit' class='searchResultButton' onclick=\"window.location.href=\'hotel.html\'\">View Rooms</button>"); 
+  $("#result"+searchNumber).append("<button type='submit' class='searchResultButton' onclick=\"window.location.href=\'hotel.html\'\">Book Now!</button>"); 
   $("#result"+searchNumber).append("<img src='hotel"+roomData.key+".jpg' class='searchResultImage'>");
 
   $("#result"+searchNumber).append("<h3 class='searchResultTitle'>"+roomData.title+"</h3>");
