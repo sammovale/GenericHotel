@@ -1,9 +1,11 @@
 //use search number at the moment but will most likely change to a unique ID/key in the database that will be refrenced 
 var searchNumber = 3;
+var map = null;
+var map2 = null;
 
 //create a hotelStruct/object that will be used but replaced with a struct that grabs data from the database
 var hotelStruct = {title:"Mantra Hindmarsh Square", description:"The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.",
-                    key:"1"
+                    key:"1", locationLat:-26.363, locationLng:132.044
 };
 
 var roomStruct = {title:"The Penthouse $300", description:"The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.", key:"1"}
@@ -27,7 +29,7 @@ $(document).ready(function(){
 //This is for the map on the search view. Will need to interface with the database to change the lat and lng values for the markers
 function initMap() {
         var uluru = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById('map'), {
+        map = new google.maps.Map(document.getElementById('map'), {
           zoom: 4,
           center: uluru,
            gestureHandling: 'cooperative' //to prevent the page scrolling when using two finger scroll on laptops etc
@@ -41,7 +43,7 @@ function initMap() {
 //This is for the second map on the hotel view
 function initMap2() {
         var uluru = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById('map2'), {
+        map2 = new google.maps.Map(document.getElementById('map2'), {
           zoom: 4,
           center: uluru,
            gestureHandling: 'cooperative' //to prevent the page scrolling when using two finger scroll on laptops etc
@@ -69,6 +71,13 @@ function addHotel(hotelData){
   //add one to the counter to keep track of the number of posts and which ones are what
   searchNumber = searchNumber+1;
   $(".resultNumber").text("Showing "+searchNumber+" Results");
+
+  //add a marker to the map
+  var hotelPos = {lat: hotelData.locationLat, lng: hotelData.locationLng};
+  var marker = new google.maps.Marker({
+    position: hotelPos,
+    map: map
+  });
 
 }
 
