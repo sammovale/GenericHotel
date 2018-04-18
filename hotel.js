@@ -6,6 +6,8 @@ var hotelStruct = {title:"Mantra Hindmarsh Square", description:"The Mantra Hote
                     key:"1"
 };
 
+var roomStruct = {title:"The Penthouse $300", description:"The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.", key:"1"}
+
 //listen for events
 $(document).ready(function(){
   //if the search button is clicked run the addHotel function for now
@@ -15,6 +17,9 @@ $(document).ready(function(){
 
   $(".resultNumber").text("Showing "+searchNumber+" Results");
 
+  $("#contact").click(function(){
+    addRoom(roomStruct);
+  });
 });
 
 
@@ -58,6 +63,24 @@ function addHotel(hotelData){
 
   $("#result"+searchNumber).append("<h3 class='searchResultTitle'>"+hotelData.title+"</h3>");
   $("#result"+searchNumber).append("<p class='searchResultDescription'>"+hotelData.description+"</p>");
+
+  $(".content").append("</div>");
+
+  //add one to the counter to keep track of the number of posts and which ones are what
+  searchNumber = searchNumber+1;
+  $(".resultNumber").text("Showing "+searchNumber+" Results");
+
+}
+
+function addRoom(roomData){
+  //build the structure for the searchResult
+  $(".content").append("<div class='searchResult' id='result"+searchNumber+"'>");
+  //where searchNumber is this will be replaced with the UDID from the database from the SQL query
+  $("#result"+searchNumber).append("<button type='submit' class='searchResultButton' onclick=\"window.location.href=\'hotel.html\'\">View Rooms</button>"); 
+  $("#result"+searchNumber).append("<img src='hotel"+roomData.key+".jpg' class='searchResultImage'>");
+
+  $("#result"+searchNumber).append("<h3 class='searchResultTitle'>"+roomData.title+"</h3>");
+  $("#result"+searchNumber).append("<p class='searchResultDescription'>"+roomData.description+"</p>");
 
   $(".content").append("</div>");
 
