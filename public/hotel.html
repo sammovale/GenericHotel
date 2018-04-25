@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mantra Hindmarsh Square</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/hotel.css">
+  <link rel="stylesheet" type="text/js" href="javascripts/hotel.js">
+  <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
+  <script src="javascripts/jquery.js"></script>
+</head>
+
+<body>
+  <!-- Navigation bar with title and buttons for signed in users if signed in -->
+  <div class="navBar">
+    <a href="index.html" id="noUnderline"><h2> The Generic Hotel Search Site</h2></a>
+  </div>
+
+  <div class="content">
+  	<h2 class="hotelMainTitle">Mantra Hindmarsh Square</h2>
+
+    <img src="images/hotelMantra.jpeg" class="hotelMainPicture" alt="alt">
+
+
+  	 <div class="hotelDetails">
+      <h3 class="hotelSubDescription">Great rooms at fantastic prices!</h3>
+  		<p class="hotelMainDescription">
+  			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lobortis quis lorem eget euismod. Curabitur sed libero blandit, accumsan turpis sollicitudin, suscipit lorem. Donec in orci varius, placerat urna vitae, tempor velit. Nullam eget ligula id ex consequat sagittis. Aenean eu viverra ligula. Praesent dictum tristique nisi eget ultrices.
+  		</p>
+  		<h4 class="hotelFeaturesTitle">Features</h4>
+  		<ul class="hoteFeaturesList">
+  			<li>Free Wifi</li>
+  			<li>Swimming Pool</li>
+  			<li>Vallet Parking</li>
+  		</ul>
+      <button type="submit" class="signin" id="favourites">Add to favourites</button>
+      <button type="submit" class="signin" id="contact">Contact Us!</button>
+  	</div>
+
+
+    <div id="map2"></div>
+    <script src="javascripts/hotel.js">initMap2();</script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJGrX4LzU7U1oy41Ii93jZHpSQGhFWTw8&callback=initMap2"></script>
+
+     <div class="datecol">
+      <input class="dateInput" type="date" value="2018-03-23">
+      <input class="dateInput" type="date" value="2018-03-24">
+
+      <select class="dateInput">
+        <option value="single room">single room</option>
+        <option value="dobule room">double room</option>
+        <option value="family room">Family room</option>
+        <option value="multiple room">multiple room</option>
+      </select>
+    </div>
+
+    <div class="searchResult">
+      <button type="submit" class="searchResultButton">Book Now!</button>
+      <img src="images/hotel1.jpg" class="searchResultImage" alt="hotelImg">
+      <h3 class="searchResultTitle">The Penthouse $300</h3>
+      <p class="searchResultDescription">The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.</p>
+    </div>
+
+
+    <div class="searchResult">
+      <button type="submit" class="searchResultButton">Book Now!</button>
+      <img src="images/hotel1.jpg" class="searchResultImage" alt="hotelImg">
+      <h3 class="searchResultTitle">Economy Room $100</h3>
+      <p class="searchResultDescription">The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.</p>
+    </div>
+
+
+    <div class="searchResult">
+      <button type="submit" class="searchResultButton">Book Now!</button>
+      <img src="images/hotel1.jpg" class="searchResultImage" alt="hotelImg">
+      <h3 class="searchResultTitle">Lovers Retreat $200</h3>
+      <p class="searchResultDescription">The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.</p>
+    </div>
+
+  </div>
+  </body>
+  </html>
