@@ -172,7 +172,7 @@ form.example::after {
 
 /* this is for changing the style of the decription of the mapMakers */
 #contentMarker{
-    width: 100px;
+    width: 250px;
 }
 
 .sort  {

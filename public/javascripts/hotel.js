@@ -77,7 +77,7 @@ function addHotel(hotelData){
   var contentString = '<div id="contentMarker">'+
                       '<div id="siteNotice">'+
                       '</div>'+
-                      '<h1 id="firstHeading" class="firstHeading">'+hotelStruct.title+'</h1>'+
+                      '<h2 id="firstHeading" class="firstHeading">'+hotelStruct.title+'</h2>'+
                       '<div id="bodyContent">'+
                        hotelStruct.description+
                       '</div>'+
