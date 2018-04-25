@@ -170,6 +170,11 @@ form.example::after {
         background-color: grey;
 }
 
+/* this is for changing the style of the decription of the mapMakers */
+#contentMarker{
+    width: 100px;
+}
+
 .sort  {
     width: 10%;
     margin:6px;

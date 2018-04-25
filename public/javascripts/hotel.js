@@ -72,13 +72,29 @@ function addHotel(hotelData){
   searchNumber = searchNumber+1;
   $(".resultNumber").text("Showing "+searchNumber+" Results");
 
-  //add a marker to the map
+  //add a marker to the map, this will correspond to the struct which will be later pulled from the database
+  //this also includes the title and description will later also have a price for the cheapest room
+  var contentString = '<div id="contentMarker">'+
+                      '<div id="siteNotice">'+
+                      '</div>'+
+                      '<h1 id="firstHeading" class="firstHeading">'+hotelStruct.title+'</h1>'+
+                      '<div id="bodyContent">'+
+                       hotelStruct.description+
+                      '</div>'+
+                      '</div>';
+
+  var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
   var hotelPos = {lat: hotelData.locationLat, lng: hotelData.locationLng};
   var marker = new google.maps.Marker({
     position: hotelPos,
     map: map
   });
-
+  marker.addListener('click', function() {
+          infowindow.open(map, marker);
+  });
 }
 
 function addRoom(roomData){
