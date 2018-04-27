@@ -8,7 +8,7 @@ var hotelStruct = {title:"Mantra Hindmarsh Square", description:"The Mantra Hote
                     key:"1", locationLat:-26.363, locationLng:132.044
 };
 
-var roomStruct = {title:"The Penthouse $300", description:"The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.", key:"1"}
+var roomStruct = {title:"The Penthouse $300", description:"The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.", key:"1", locationLat:-26.363, locationLng:132.044}
 
 //listen for events
 $(document).ready(function(){
@@ -48,10 +48,32 @@ function initMap2() {
           center: uluru,
            gestureHandling: 'cooperative' //to prevent the page scrolling when using two finger scroll on laptops etc
         });
+
+
+        var contentString = '<div id="contentMarker">'+
+                      '<div id="siteNotice">'+
+                      '</div>'+
+                      '<h2 id="firstHeading" class="firstHeading">'+hotelStruct.title+'</h2>'+
+                      '<div id="bodyContent">'+
+                       hotelStruct.description+
+                      '</div>'+
+                      '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        var hotelPos = {lat: hotelStruct.locationLat, lng: hotelStruct.locationLng};
+
         var marker = new google.maps.Marker({
           position: uluru,
-          map: map
+          map: map2
         });
+
+        marker.addListener('click', function() {
+          infowindow.open(map2, marker);
+        });
+
 }
 
 //this function will add a new hotel that will grabbed from the database query and show it in the search.html page
@@ -112,6 +134,30 @@ function addRoom(roomData){
   //add one to the counter to keep track of the number of posts and which ones are what
   searchNumber = searchNumber+1;
   $(".resultNumber").text("Showing "+searchNumber+" Results");
+
+  //add a marker to the map, this will correspond to the struct which will be later pulled from the database
+  //this also includes the title and description will later also have a price for the cheapest room
+  var contentString = '<div id="contentMarker">'+
+                      '<div id="siteNotice">'+
+                      '</div>'+
+                      '<h2 id="firstHeading" class="firstHeading">'+roomData.title+'</h2>'+
+                      '<div id="bodyContent">'+
+                       roomData.description+
+                      '</div>'+
+                      '</div>';
+
+  var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+  var hotelPos = {lat: roomData.locationLat, lng: roomData.locationLng};
+  var marker = new google.maps.Marker({
+    position: hotelPos,
+    map: map2
+  });
+  marker.addListener('click', function() {
+          infowindow.open(map2, marker);
+  });
 
 }
 
