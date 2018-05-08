@@ -7,7 +7,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/search.html', function(req, res){
-  res.send("Hello")
+  //search and return the data for the search site
 });
+
 
 module.exports = router;

@@ -27,14 +27,14 @@ $(document).ready(function(){
   $("#indexSearchBar").click(function(){
     search();
   });
-
 });
+
+
 
 function search(){
   var xhttp = new XMLHttpRequest();
   // Initiate connection
-  xhttp.open('GET', "/search");
-
+  xhttp.open('GET', "/search.html");
 
   var searchQuery = "";
      xhttp.onreadystatechange = function(){
@@ -46,11 +46,8 @@ function search(){
 
      };
 
-
     // Send request
-    xhttp.send();
-
-
+    xhttp.send(searchQuery);
 }
 
 
