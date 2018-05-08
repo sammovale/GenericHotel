@@ -8,10 +8,11 @@ var hotelStruct = {title:"Mantra Hindmarsh Square", description:"The Mantra Hote
                     key:"1", locationLat:-26.363, locationLng:132.044
 };
 
-var roomStruct = {title:"The Penthouse $300", description:"The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.", key:"1", locationLat:-26.363, locationLng:132.044}
+var roomStruct = {title:"The Penthouse $300", description:"The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.", key:"1", locationLat:-26.363, locationLng:132.044};
 
 //listen for events
 $(document).ready(function(){
+
   //if the search button is clicked run the addHotel function for now
   $("#searchData").click(function(){
    addHotel(hotelStruct);
@@ -22,8 +23,35 @@ $(document).ready(function(){
   $("#contact").click(function(){
     addRoom(roomStruct);
   });
+
+  $("#indexSearchBar").click(function(){
+    search();
+  });
+
 });
 
+function search(){
+  var xhttp = new XMLHttpRequest();
+  // Initiate connection
+  xhttp.open('GET', "/search");
+
+
+  var searchQuery = "";
+     xhttp.onreadystatechange = function(){
+
+      if (this.readyState == 4 && this.status == 200){
+        //send data fron the search field
+        searchQuery = $("#searchQuery").val();
+      }
+
+     };
+
+
+    // Send request
+    xhttp.send();
+
+
+}
 
 
 //This is for the map on the search view. Will need to interface with the database to change the lat and lng values for the markers
