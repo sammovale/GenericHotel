@@ -24,8 +24,6 @@ $(document).ready(function(){
     addRoom(roomStruct);
   });
 
-  $("#indexSearchBar").click(function(){
-  });
 });
 
 
