@@ -8,10 +8,15 @@ fs.readFile('data/hotels.json', 'utf8', function(err, data){
     hotels = JSON.parse(data);
 });
 
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
+});
+
+
+//send the hotels that match to the search query
+router.get('/data/hotels.json', function(req, res){
+	
 });
 
 router.get('/search', function(req, res){

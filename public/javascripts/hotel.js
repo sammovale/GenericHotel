@@ -13,6 +13,11 @@ var roomStruct = {title:"The Penthouse $300", description:"The Mantra Hotel is a
 //listen for events
 $(document).ready(function(){
 
+  //when document loads get the ?search= query from the URL and make a GET request
+  $.get("/data/hotels.json", function(){
+
+  });
+
   //if the search button is clicked run the addHotel function for now
   $("#searchData").click(function(){
    addHotel(hotelStruct);
@@ -23,6 +28,9 @@ $(document).ready(function(){
   $("#contact").click(function(){
     addRoom(roomStruct);
   });
+
+
+
 
 });
 
