@@ -25,30 +25,11 @@ $(document).ready(function(){
   });
 
   $("#indexSearchBar").click(function(){
-    search();
   });
 });
 
 
 
-function search(){
-  var xhttp = new XMLHttpRequest();
-  // Initiate connection
-  xhttp.open('GET', "/search.html");
-
-  var searchQuery = "";
-     xhttp.onreadystatechange = function(){
-
-      if (this.readyState == 4 && this.status == 200){
-        //send data fron the search field
-        searchQuery = $("#searchQuery").val();
-      }
-
-     };
-
-    // Send request
-    xhttp.send(searchQuery);
-}
 
 
 //This is for the map on the search view. Will need to interface with the database to change the lat and lng values for the markers
