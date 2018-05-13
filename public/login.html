@@ -2,16 +2,24 @@
 <html lang="en">
 
 <head>
-	<title>Log In or Signup!</title>
-	<link rel="stylesheet" href="stylesheets/hotel.css">
-	<link rel="stylesheet" type="text/js" href="javascripts/hotel.js">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
-	<script src="jquery.js"></script>
-	<meta charset="utf-8"/>
+  <title>Log In or Sign Up!</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/hotel.css">
+    <script src="javascripts/jquery.js"></script>
+   <script src="javascripts/hotel.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
+
+
+      <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="422635074327-1siac6o9pdlq36ggfdue8bbd4rogfkpk.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
-<body>
+
+
+
+<body onload="getUserInfo({})">
 
 <div class="navBar">
 	<a href="index.html" id="noUnderline"><h2> The Generic Hotel Search Site</h2></a>
@@ -19,6 +27,10 @@
 
 <h2 class="webTitle">Log In or Sign Up!</h2>
 <p class="webTitle">Log in or signup to The Generic Hotel Search website to get preferences,saved searches and manage bookings. <br>You can even use facebook to login! We promise your data won't be used without your permssion or to rig elections!</p>
+
+
+    <div id="content"></div>
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
 
 <div class="signupForm">
 	

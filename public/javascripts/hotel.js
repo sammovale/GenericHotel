@@ -29,13 +29,68 @@ $(document).ready(function(){
     addRoom(roomStruct);
   });
 
-
-
-
 });
 
 
+        function onSignIn(googleUser) {
+            // Useful data for your client-side scripts:
+            var profile = googleUser.getBasicProfile();
+            console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+            console.log('Full Name: ' + profile.getName());
+            console.log('Given Name: ' + profile.getGivenName());
+            console.log('Family Name: ' + profile.getFamilyName());
+            console.log("Image URL: " + profile.getImageUrl());
+            console.log("Email: " + profile.getEmail());
 
+            // The ID token you need to pass to your backend:
+            var id_token = googleUser.getAuthResponse().id_token;
+            console.log("ID Token: " + id_token);
+            
+            // Pass the token to my getUserInfo
+            getUserInfo({idtoken: id_token});
+        };
+      
+        // Init map
+        function login() {
+            getUserInfo({username:document.getElementById('user').value, password:document.getElementById('pass').value});
+        }
+
+        // Load and show users details
+        function getUserInfo(params) {
+            // Create new AJAX request
+            var xhttp = new XMLHttpRequest();
+            
+            // Define behaviour for a response
+            xhttp.onreadystatechange = function() {
+            
+                if (this.readyState == 4 && this.status == 200) {
+                
+                    // convert from string to JSON, populate hotels array
+                    user = JSON.parse(xhttp.responseText);
+                    
+                    // Check is logged in
+                    if(user.username !== null){
+                        document.getElementById('content').innerHTML=' \
+    <h2>Welcome back, '+user.username+'</h2>';
+                    // else prompt for login
+                    } else {
+                        document.getElementById('content').innerHTML=' \
+    <h2>Please Log In/Sign Up</h2>\n \
+    <input type="text" id="user" name="name">Username</input><br />\n \
+    <input type="password" id="pass" name="name">Password</input><br />\n \
+    <button onclick="login();">Login/Signup</button><br />\n';
+                    }
+                }
+            };
+            
+            // Initiate connection
+            xhttp.open("POST", "/user.json", true);
+            
+            xhttp.setRequestHeader("Content-type","application/json");
+            
+            // Send request
+            xhttp.send(JSON.stringify(params));
+        }
 
 
 //This is for the map on the search view. Will need to interface with the database to change the lat and lng values for the markers
