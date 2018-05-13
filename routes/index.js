@@ -24,7 +24,7 @@ router.get('/', function(req, res, next) {
 
 //send the hotels that match to the search query
 router.get('/data/hotels.json', function(req, res){
-	
+	res.send(JSON.stringify(hotels));
 });
 
 router.get('/search', function(req, res){

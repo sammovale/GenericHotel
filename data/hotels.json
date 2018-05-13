@@ -1,6 +1,23 @@
 [
 	{"title":"Mantra Hindmarsh Square", "description":"The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.",
                     "key":"1", "locationLat":-26.363, "locationLng":132.044
+	},
+
+	{"title":"The Hilton Adelaide", "description":"Overlooking Victoria Square, this upscale high-rise hotel is a 14-minute walk from Adelaide Station.",
+                    "key":"2", "locationLat":-25.363, "locationLng":131.044
+	},
+
+	{"title":"Pullman Adelaide", "description":"Set on Hindmarsh Square, this upscale hotel surrounded by casual eateries is 7 km from Adelaide Airport and 13 km from Glenelg Beach along the Gulf Saint Vincent.",
+                    "key":"3", "locationLat":-25.363, "locationLng":130.044
+	},
+
+	{"title":"Mercure Grosvenor Adelaide", "description":"Featuring neoclassical columns and balustrades, this modern hotel in an elegant building is a minute's walk from the nearest tram stop and 9 minutes' walk from the South Australian Museum. ",
+                    "key":"4", "locationLat":-25.363, "locationLng":133.044
+	},
+
+	{"title":"Sage Hotel Adelaide", "description":"Near the city centre and opposite Kurrangga park, this modern hotel is a 6-minute walk from the South Terrace tram station and 2.6 km from Adelaide Convention Centre.",
+                    "key":"5", "locationLat":-25.363, "locationLng":134.044
 	}
+
 
 ]

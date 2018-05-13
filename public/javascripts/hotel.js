@@ -1,5 +1,5 @@
 //use search number at the moment but will most likely change to a unique ID/key in the database that will be refrenced 
-var searchNumber = 3;
+var searchNumber = 0;
 var map = null;
 var map2 = null;
 
@@ -9,14 +9,10 @@ var hotelStruct = {title:"Mantra Hindmarsh Square", description:"The Mantra Hote
 };
 
 var roomStruct = {title:"The Penthouse $300", description:"The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.", key:"1", locationLat:-26.363, locationLng:132.044};
+var hotels = [];
 
 //listen for events
 $(document).ready(function(){
-
-  //when document loads get the ?search= query from the URL and make a GET request
-  $.get("/data/hotels.json", function(){
-
-  });
 
   //if the search button is clicked run the addHotel function for now
   $("#searchData").click(function(){
@@ -31,66 +27,93 @@ $(document).ready(function(){
 
 });
 
-        function onSignIn(googleUser) {
-            // Useful data for your client-side scripts:
-            var profile = googleUser.getBasicProfile();
-            console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-            console.log('Full Name: ' + profile.getName());
-            console.log('Given Name: ' + profile.getGivenName());
-            console.log('Family Name: ' + profile.getFamilyName());
-            console.log("Image URL: " + profile.getImageUrl());
-            console.log("Email: " + profile.getEmail());
+//make an AJAX GET request for the hotels
+function search(){
 
-            // The ID token you need to pass to your backend:
-            var id_token = googleUser.getAuthResponse().id_token;
-            console.log("ID Token: " + id_token);
+   // Create new AJAX request
+    var xhttp = new XMLHttpRequest();
             
-            // Pass the token to my getUserInfo
-            getUserInfo({idtoken: id_token});
-        };
-      
-        // Init map
-        function login() {
-            getUserInfo({username:document.getElementById('user').value, password:document.getElementById('pass').value});
-        }
-
-        // Load and show users details
-        function getUserInfo(params) {
-            // Create new AJAX request
-            var xhttp = new XMLHttpRequest();
+      // Define behaviour for a response
+      xhttp.onreadystatechange = function() {
             
-            // Define behaviour for a response
-            xhttp.onreadystatechange = function() {
-            
-                if (this.readyState == 4 && this.status == 200) {
+      if(this.readyState == 4 && this.status == 200) {
                 
-                    // convert from string to JSON, populate hotels array
-                    user = JSON.parse(xhttp.responseText);
-                    
-                    // Check is logged in
-                    if(user.username !== null){
-                        document.getElementById('loginForm').innerHTML=' \
-    <h2>Welcome back, '+user.username+'</h2>';
-                    // else prompt for login
-                    } else {
-                        document.getElementById('loginForm').innerHTML=' \
-    <h2>Please Log In/Sign Up</h2>\n \
-    <input type="text" id="user" name="name">Username</input><br />\n \
-    <input type="password" id="pass" name="name">Password</input><br />\n \
-    <button onclick="login();">Login/Signup</button><br />\n';
-                    }
-                }
-            };
+        // convert from string to JSON, populate hotels array
+        //call the addhotels fucntion and add all the hotels that the GET response sent
+        hotels = JSON.parse(xhttp.responseText);
+        for (var i = hotels.length - 1; i >= 0; i--){
+            addHotel(hotels[i]);
+        }            
+      }
+    };
             
-            // Initiate connection
-            xhttp.open("POST", "/user.json", true);
+    // Initiate connection
+    xhttp.open("GET", "data/hotels.json", true);
             
-            xhttp.setRequestHeader("Content-type","application/json");
-            
-            // Send request
-            xhttp.send(JSON.stringify(params));
-        }
+    // Send request
+    xhttp.send();
 
+}
+
+function onSignIn(googleUser){
+          // Useful data for your client-side scripts:
+          var profile = googleUser.getBasicProfile();
+          console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+          console.log('Full Name: ' + profile.getName());
+          console.log('Given Name: ' + profile.getGivenName());
+          console.log('Family Name: ' + profile.getFamilyName());
+          console.log("Image URL: " + profile.getImageUrl());
+          console.log("Email: " + profile.getEmail());
+
+          // The ID token you need to pass to your backend:
+          var id_token = googleUser.getAuthResponse().id_token;
+          console.log("ID Token: " + id_token);
+            
+          // Pass the token to my getUserInfo
+          getUserInfo({idtoken: id_token});
+};
+      
+// Init map
+function login(){
+  getUserInfo({username:document.getElementById('user').value, password:document.getElementById('pass').value});
+}
+
+// Load and show users details
+function getUserInfo(params) {
+    // Create new AJAX request
+    var xhttp = new XMLHttpRequest();
+            
+    // Define behaviour for a response
+    xhttp.onreadystatechange = function() {
+            
+      if (this.readyState == 4 && this.status == 200) {
+                
+        // convert from string to JSON, populate hotels array
+        user = JSON.parse(xhttp.responseText);
+                    
+        // Check is logged in
+        if(user.username !== null){
+          document.getElementById('loginForm').innerHTML=' \
+          <h2>Welcome back, '+user.username+'</h2>';
+        // else prompt for login
+        }else{
+          document.getElementById('loginForm').innerHTML=' \
+          <h2>Please Log In/Sign Up</h2>\n \
+          <input type="text" id="user" name="name">Username</input><br />\n \
+          <input type="password" id="pass" name="name">Password</input><br />\n \
+          <button onclick="login();">Login/Signup</button><br />\n';
+        }
+      }
+    };
+            
+    // Initiate connection
+    xhttp.open("POST", "/user.json", true);
+            
+    xhttp.setRequestHeader("Content-type","application/json");
+            
+    // Send request
+    xhttp.send(JSON.stringify(params));
+}
 
 //This is for the map on the search view. Will need to interface with the database to change the lat and lng values for the markers
 function initMap() {
@@ -165,9 +188,9 @@ function addHotel(hotelData){
   var contentString = '<div id="contentMarker">'+
                       '<div id="siteNotice">'+
                       '</div>'+
-                      '<h2 id="firstHeading" class="firstHeading">'+hotelStruct.title+'</h2>'+
+                      '<h2 id="firstHeading" class="firstHeading">'+hotelData.title+'</h2>'+
                       '<div id="bodyContent">'+
-                       hotelStruct.description+
+                       hotelData.description+
                       '</div>'+
                       '</div>';
 
@@ -180,6 +203,7 @@ function addHotel(hotelData){
     position: hotelPos,
     map: map
   });
+
   marker.addListener('click', function() {
           infowindow.open(map, marker);
   });

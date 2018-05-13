@@ -10,7 +10,9 @@
   <script src="javascripts/jquery.js"></script>
 </head>
 
-<body>
+<!-- get the search parameter from the url and send get request for the hotel data -->
+<!-- will change to using a jquery method instead as apparently onload= is much slower -->
+<body onload="search()">
   <!-- Navigation bar with title and buttons for signed in users if signed in -->
   <div class="navBar">
     <a href="index.html" id="noUnderline"><h2> The Generic Hotel Search Site</h2></a>
@@ -66,27 +68,15 @@
       </div>
     </div>
 
- 
-    <div class="searchResult">
-      <button type="submit" class="searchResultButton" onclick="window.location.href='hotel.html'">View Rooms</button>
-      <img src="images/hotel1.jpg" class="searchResultImage" alt="hotelImg">
-      <h3 class="searchResultTitle">Mantra Hindmarsh Square</h3>
-      <p class="searchResultDescription">The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.</p>
-    </div>
 
+    <!-- template for the hotel modules
     <div class="searchResult">
       <button type="submit" class="searchResultButton" onclick="window.location.href='hotel.html'">View Rooms</button>
       <img src="images/hotel1.jpg" class="searchResultImage" alt="hotelImg">
       <h3 class="searchResultTitle">Mantra Hindmarsh Square</h3>
       <p class="searchResultDescription">The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you!</p>
     </div>
-
-    <div class="searchResult">
-      <button type="submit" class="searchResultButton" onclick="window.location.href='hotel.html'">View Rooms</button>
-      <img src="images/hotel1.jpg" class="searchResultImage" alt="hotelImg">
-      <h3 class="searchResultTitle">Mantra Hindmarsh Square</h3>
-      <p class="searchResultDescription">The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you!</p>
-    </div>
+    -->
 
   </div>
 </body>
