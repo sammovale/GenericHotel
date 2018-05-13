@@ -19,6 +19,10 @@ $(document).ready(function(){
    addHotel(hotelStruct);
   });
 
+  $(".signin").click(function(){
+    $("body").load("/login.html");
+  });
+
   $(".resultNumber").text("Showing "+searchNumber+" Results");
 
   $("#contact").click(function(){
