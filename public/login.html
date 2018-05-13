@@ -12,7 +12,7 @@
 
 
       <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="422635074327-1siac6o9pdlq36ggfdue8bbd4rogfkpk.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="422635074327-p09d4f60471au43tsv84vhg5qkhrlj4q.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
@@ -29,44 +29,16 @@
 <p class="webTitle">Log in or signup to The Generic Hotel Search website to get preferences,saved searches and manage bookings. <br>You can even use facebook to login! We promise your data won't be used without your permssion or to rig elections!</p>
 
 
-    <div id="content"></div>
-    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-
 <div class="signupForm">
 	
 	<form>
-		<p>First Name <input type="text" name="firstname"></p>
-		<p>Last Name <input type="text" name="lastname"></p>
-		<p>Username: <input type="text" name="username"> </p>
-		<p>Email: <input type="text" name="Email"></p>
-		<p>Password: <input type="password" name="password"></p>
+		<div id="loginForm"></div>
+		<div id="googleButton">
+    	<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+   		</div>
 	</form>
 
-	<button class="signin">Sign Up!</button>
 </div>
-
-<div class="signupDivider">
-<hr>
-</div>
-
-<div class="loginForm">
-	<div class ="login">
-		<form>
-			<p>Username: <input type="text" name="username"> </p>
-			<p>Password: <input type="password" name="password"></p>
-		</form>
-		<button class="signin">Log In</button>
-	</div>
-
-	<div class="facebook">
-			<button class="signin">Log In/Sign Up Facebook</button>
-	</div>
-
-
-
-</div>
-
-
 
 </body>
 </html>

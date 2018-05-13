@@ -17,6 +17,19 @@ h2{
     }
 }
 
+/* makes the google sign in button centered */
+.g-signin2{
+  width: 100%;
+}
+
+.g-signin2 > div{
+  margin: 0 auto;
+}
+
+#loginForm{
+    margin-bottom: 5%;
+}
+
 /*Hide the advanced filters and set map to have 100% width when the screen is 1100px wide or less */
 @media only screen and (max-width: 1100px) {
     .content {

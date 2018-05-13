@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');
 
-var CLIENT_ID = 'YOUR_CLIENT_ID.apps.googleusercontent.com';
+var CLIENT_ID = '422635074327-p09d4f60471au43tsv84vhg5qkhrlj4q.apps.googleusercontent.com';
 var {OAuth2Client} = require('google-auth-library');
 var client = new OAuth2Client(CLIENT_ID);
 
@@ -50,7 +50,6 @@ router.post('/user.json', function(req, res){
                 sessions[req.session.id] = req.body.username;
                 user = req.body.username;
             }
-            
         }
         res.json({username:user});
         

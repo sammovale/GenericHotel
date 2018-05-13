@@ -31,7 +31,6 @@ $(document).ready(function(){
 
 });
 
-
         function onSignIn(googleUser) {
             // Useful data for your client-side scripts:
             var profile = googleUser.getBasicProfile();
@@ -70,11 +69,11 @@ $(document).ready(function(){
                     
                     // Check is logged in
                     if(user.username !== null){
-                        document.getElementById('content').innerHTML=' \
+                        document.getElementById('loginForm').innerHTML=' \
     <h2>Welcome back, '+user.username+'</h2>';
                     // else prompt for login
                     } else {
-                        document.getElementById('content').innerHTML=' \
+                        document.getElementById('loginForm').innerHTML=' \
     <h2>Please Log In/Sign Up</h2>\n \
     <input type="text" id="user" name="name">Username</input><br />\n \
     <input type="password" id="pass" name="name">Password</input><br />\n \
