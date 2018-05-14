@@ -34,8 +34,19 @@ router.get('/data/hotels.json', function(req, res){
 
 //send the rooms data corresponding to the key value from the hotel
 router.get('/data/rooms.json', function(req, res){
-    res.send(JSON.stringify(rooms));
+    //get the hotelID param passed from html and return only rooms corresponding to that ID
+    var hotelID = req.query.hotelID;
+    var roomsID = [];
+    for (var i = rooms.length - 1; i >= 0; i--){
+        if(rooms[i].key == hotelID){
+            roomsID.push(rooms[i]);
+        }
+    }
+
+    res.send(JSON.stringify(roomsID));
+    
 });
+
 
 router.get('/search', function(req, res){
   //search and return the data for the search site

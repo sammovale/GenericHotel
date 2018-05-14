@@ -1,11 +1,20 @@
 [
 
 
-{"title":"The Penthouse $300", "description":"The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.", "key":"1", "locationLat":-26.363, "locationLng":132.044},
+{"name":"The Mantra Hotel", "title":"The Penthouse $300", "description":"The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.", "key":"1", "locationLat":-26.363, "locationLng":132.044},
 
-{"title":"Economy Room $100", "description":"The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.", "key":"1", "locationLat":-26.363, "locationLng":132.044},
+{"name":"The Mantra Hotel", "title":"Economy Room $100", "description":"The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.", "key":"1", "locationLat":-26.363, "locationLng":132.044},
 
-{"title":"Lovers Retreat $200", "description":"The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.", "key":"1", "locationLat":-26.363, "locationLng":132.044}
+{"name":"The Mantra Hotel", "title":"Lovers Retreat $200", "description":"The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.", "key":"1", "locationLat":-26.363, "locationLng":132.044},
+
+
+
+
+{"name":"The Hilton", "title":"Hilton Penthouse $350", "description":"The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.", "key":"2", "locationLat":-26.363, "locationLng":132.044},
+
+{"name":"The Hilton", "title":"Hilton Economy $150", "description":"The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.", "key":"2", "locationLat":-26.363, "locationLng":132.044},
+
+{"name":"The Hilton", "title":"Lovers Retreat $270", "description":"The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.", "key":"2", "locationLat":-26.363, "locationLng":132.044}
 
 
 ]

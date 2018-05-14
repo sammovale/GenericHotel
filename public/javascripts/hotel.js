@@ -62,6 +62,9 @@ function search(){
 
 function getRoom(){
 
+//not the best way to do it but get the paramter hotelID to send a get request for all hotel rooms with that ID
+ var ID = location.search.split('hotelID=')[1]
+
    // Create new AJAX request
     var xhttp = new XMLHttpRequest();
             
@@ -69,18 +72,24 @@ function getRoom(){
       xhttp.onreadystatechange = function() {
             
       if(this.readyState == 4 && this.status == 200) {
-                
+
+   
         // convert from string to JSON, populate hotels array
         //call the addhotels fucntion and add all the hotels that the GET response sent
+        //start changing the html on the hotel.html to the data received from get request too such as the title
         rooms = JSON.parse(xhttp.responseText);
+        $(".titleHotel").append("<h2 class='hotelMainTitle'>"+rooms[0].name+"</h2>");
         for (var i = rooms.length - 1; i >= 0; i--){
             addRoom(rooms[i]);
-        }            
+        }
+
+
+
       }
     };
             
     // Initiate connection
-    xhttp.open("GET", "data/rooms.json", true);
+    xhttp.open("GET", "data/rooms.json?"+"hotelID="+ID, true);
             
     // Send request
     xhttp.send();
@@ -203,7 +212,8 @@ function addHotel(hotelData){
   //build the structure for the searchResult
   $(".content").append("<div class='searchResult' id='result"+searchNumber+"'>");
   //where searchNumber is this will be replaced with the UDID from the database from the SQL query
-  $("#result"+searchNumber).append("<button type='submit' class='searchResultButton' onclick=\"window.location.href=\'hotel.html\'\">View Rooms</button>"); 
+
+  $("#result"+searchNumber).append("<form action='hotel.html'><input type='hidden' name='hotelID' value='"+hotelData.key+"'>"+"<button type='submit' class='searchResultButton'>View Rooms</button>"+"</form>");
   $("#result"+searchNumber).append("<img src='images/hotel"+hotelData.key+".jpg' class='searchResultImage'>");
 
   $("#result"+searchNumber).append("<h3 class='searchResultTitle'>"+hotelData.title+"</h3>");
@@ -242,8 +252,11 @@ function addHotel(hotelData){
 }
 
 function addRoom(roomData){
+
   //build the structure for the searchResult
   $(".content").append("<div class='searchResult' id='result"+searchNumber+"'>");
+
+
   //where searchNumber is this will be replaced with the UDID from the database from the SQL query
   $("#result"+searchNumber).append("<button type='submit' class='searchResultButton' onclick=\"window.location.href=\'hotel.html\'\">Book Now!</button>"); 
   $("#result"+searchNumber).append("<img src='images/hotel"+roomData.key+".jpg' class='searchResultImage'>");
