@@ -11,9 +11,14 @@ var users = [{username:"testuser", password:"NYANNYAN", google:"1151374736115501
 var sessions = {};
 
 var hotels = [];
+var rooms = [];
 
 fs.readFile('data/hotels.json', 'utf8', function(err, data){ 
     hotels = JSON.parse(data);
+});
+
+fs.readFile('data/rooms.json', 'utf8', function(err, data){ 
+    rooms = JSON.parse(data);
 });
 
 /* GET home page. */
@@ -25,6 +30,11 @@ router.get('/', function(req, res, next) {
 //send the hotels that match to the search query
 router.get('/data/hotels.json', function(req, res){
 	res.send(JSON.stringify(hotels));
+});
+
+//send the rooms data corresponding to the key value from the hotel
+router.get('/data/rooms.json', function(req, res){
+    res.send(JSON.stringify(rooms));
 });
 
 router.get('/search', function(req, res){

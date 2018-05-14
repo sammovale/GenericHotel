@@ -10,6 +10,7 @@ var hotelStruct = {title:"Mantra Hindmarsh Square", description:"The Mantra Hote
 
 var roomStruct = {title:"The Penthouse $300", description:"The Mantra Hotel is a very fine hotel with fantastic views. Great pricing and location makes Mantra the hotel for you! There is a pool and all other sorts of entertainment.", key:"1", locationLat:-26.363, locationLng:132.044};
 var hotels = [];
+var rooms = [];
 
 //listen for events
 $(document).ready(function(){
@@ -26,7 +27,7 @@ $(document).ready(function(){
   $(".resultNumber").text("Showing "+searchNumber+" Results");
 
   $("#contact").click(function(){
-    addRoom(roomStruct);
+   
   });
 
 });
@@ -53,6 +54,33 @@ function search(){
             
     // Initiate connection
     xhttp.open("GET", "data/hotels.json", true);
+            
+    // Send request
+    xhttp.send();
+
+}
+
+function getRoom(){
+
+   // Create new AJAX request
+    var xhttp = new XMLHttpRequest();
+            
+      // Define behaviour for a response
+      xhttp.onreadystatechange = function() {
+            
+      if(this.readyState == 4 && this.status == 200) {
+                
+        // convert from string to JSON, populate hotels array
+        //call the addhotels fucntion and add all the hotels that the GET response sent
+        rooms = JSON.parse(xhttp.responseText);
+        for (var i = rooms.length - 1; i >= 0; i--){
+            addRoom(rooms[i]);
+        }            
+      }
+    };
+            
+    // Initiate connection
+    xhttp.open("GET", "data/rooms.json", true);
             
     // Send request
     xhttp.send();
