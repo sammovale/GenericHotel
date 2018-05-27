@@ -29,18 +29,24 @@ router.get('/', function(req, res, next) {
 
 //send the hotels that match to the search query
 router.get('/data/hotels.json', function(req, res){
-	//
-
+    var searchQuery = req.query.search;
+    console.log("SEARCH QUERY IS: " + searchQuery);
     //connect to the database
     req.pool.getConnection(function(err,connection){
         if(err){
             throw err;
         }
-        var query = "SELECT * from hotels";
+        //if no search query return the whole database for now, else perform search query with search text
+        if(searchQuery == "undefined"){
+            console.log("SHOWING ALL FROM TABLES");
+            var query = "SELECT * from hotels";
+        }else{
+            //this should be santised for prevention against SQL and XSS injection techniques, will get to that later
+             var query = "SELECT * from hotels WHERE title LIKE '"+searchQuery+"%'";
+        }
         connection.query(query, function(err, results){
             connection.release(); //release connection
             res.send(JSON.stringify(results));
-            //res.json(results); //send the response
         });
     });
 });

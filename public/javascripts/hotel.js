@@ -35,6 +35,8 @@ $(document).ready(function(){
 //make an AJAX GET request for the hotels
 function search(){
 
+    var urlParams = new URLSearchParams(window.location.search);
+    var searchTerm = urlParams.get('search');
    // Create new AJAX request
     var xhttp = new XMLHttpRequest();
             
@@ -53,7 +55,7 @@ function search(){
     };
             
     // Initiate connection
-    xhttp.open("GET", "data/hotels.json", true);
+    xhttp.open("GET", "data/hotels.json?search="+searchTerm, true);
             
     // Send request
     xhttp.send();
