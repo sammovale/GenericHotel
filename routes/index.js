@@ -29,7 +29,20 @@ router.get('/', function(req, res, next) {
 
 //send the hotels that match to the search query
 router.get('/data/hotels.json', function(req, res){
-	res.send(JSON.stringify(hotels));
+	//
+
+    //connect to the database
+    req.pool.getConnection(function(err,connection){
+        if(err){
+            throw err;
+        }
+        var query = "SELECT * from hotels";
+        connection.query(query, function(err, results){
+            connection.release(); //release connection
+            res.send(JSON.stringify(results));
+            //res.json(results); //send the response
+        });
+    });
 });
 
 //send the rooms data corresponding to the key value from the hotel
@@ -42,7 +55,6 @@ router.get('/data/rooms.json', function(req, res){
             roomsID.push(rooms[i]);
         }
     }
-
     res.send(JSON.stringify(roomsID));
     
 });

@@ -213,8 +213,8 @@ function addHotel(hotelData){
   $(".content").append("<div class='searchResult' id='result"+searchNumber+"'>");
   //where searchNumber is this will be replaced with the UDID from the database from the SQL query
 
-  $("#result"+searchNumber).append("<form action='hotel.html'><input type='hidden' name='hotelID' value='"+hotelData.key+"'>"+"<button type='submit' class='searchResultButton'>View Rooms</button>"+"</form>");
-  $("#result"+searchNumber).append("<img src='images/hotel"+hotelData.key+".jpg' class='searchResultImage'>");
+  $("#result"+searchNumber).append("<form action='hotel.html'><input type='hidden' name='hotelID' value='"+hotelData.hotel_id+"'>"+"<button type='submit' class='searchResultButton'>View Rooms</button>"+"</form>");
+  $("#result"+searchNumber).append("<img src='images/hotel"+hotelData.hotel_id+".jpg' class='searchResultImage'>");
 
   $("#result"+searchNumber).append("<h3 class='searchResultTitle'>"+hotelData.title+"</h3>");
   $("#result"+searchNumber).append("<p class='searchResultDescription'>"+hotelData.description+"</p>");

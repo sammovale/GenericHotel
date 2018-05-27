@@ -10,7 +10,7 @@ var usersRouter = require('./routes/users');
 
 var mysql = require('mysql');
 
-var dbConnectionPool= mysql.createPool({host:'localhost', user:'root', password:'password',database:'PhoneCompany'});
+var dbConnectionPool= mysql.createPool({host:'localhost', user:'root', password:'password',database:'genericHotel'});
 var app = express();
 
 // view engine setup
