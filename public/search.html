@@ -21,8 +21,11 @@
   <!-- All the content for the search webpage -->
   <div class="content">
 
-    <input type="text" placeholder="Search by city, suburb or postcode!" name="search" class="search">
-    <button class="searchbutton" id="searchData"><i class="fa fa-search"></i></button>
+    <form action="/search">
+          <input type="text" placeholder="Search by city, suburb or postcode!" name="search" class="search" id="searchQuery">
+        <button class="searchbutton" id="indexSearchBar"><i class="fa fa-search"></i></button>
+     </form>
+
     <!-- The date selectors and style of room -->
     <div class="datecol">
       <input class="dateInput" type="date" value="2018-03-23">
