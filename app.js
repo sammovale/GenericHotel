@@ -8,11 +8,19 @@ var session = require('express-session');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+var mysql = require('mysql');
+
+var dbConnectionPool= mysql.createPool({host:'localhost', user:'root', password:'password',database:'PhoneCompany'});
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+
+
+app.use(function(req, res, next){
+	req.pool= dbConnectionPool; next();
+});
 
 app.use(logger('dev'));
 app.use(express.json());
