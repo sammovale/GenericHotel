@@ -55,14 +55,22 @@ router.get('/data/hotels.json', function(req, res){
 router.get('/data/rooms.json', function(req, res){
     //get the hotelID param passed from html and return only rooms corresponding to that ID
     var hotelID = req.query.hotelID;
-    var roomsID = [];
-    for (var i = rooms.length - 1; i >= 0; i--){
-        if(rooms[i].key == hotelID){
-            roomsID.push(rooms[i]);
+    req.pool.getConnection(function(err,connection){
+        if(err){
+            throw err;
         }
-    }
-    res.send(JSON.stringify(roomsID));
-    
+        //if no search query return the whole database for now, else perform search query with search text
+        if(hotelID == "undefined"){
+            console.log("ERROR NEED A VALID HOTEL ID");
+        }else{
+            //this should be santised for prevention against SQL and XSS injection techniques, will get to that later
+             var query = "SELECT * from rooms WHERE hotel_id ='"+hotelID+"'";
+        }
+        connection.query(query, function(err, results){
+        connection.release(); //release connection
+        res.send(JSON.stringify(results));
+        });
+    });
 });
 
 
