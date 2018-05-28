@@ -75,7 +75,6 @@ function getRoom(){
             
       if(this.readyState == 4 && this.status == 200) {
 
-   
         // convert from string to JSON, populate hotels array
         //call the addhotels fucntion and add all the hotels that the GET response sent
         //start changing the html on the hotel.html to the data received from get request too such as the title
@@ -84,8 +83,6 @@ function getRoom(){
         for (var i = rooms.length - 1; i >= 0; i--){
             addRoom(rooms[i]);
         }
-
-
 
       }
     };
@@ -166,10 +163,6 @@ function initMap() {
           center: uluru,
            gestureHandling: 'cooperative' //to prevent the page scrolling when using two finger scroll on laptops etc
         });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
 }
 
 //This is for the second map on the hotel view
@@ -196,11 +189,6 @@ function initMap2() {
         });
 
         var hotelPos = {lat: hotelStruct.locationLat, lng: hotelStruct.locationLng};
-
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map2
-        });
 
         marker.addListener('click', function() {
           infowindow.open(map2, marker);

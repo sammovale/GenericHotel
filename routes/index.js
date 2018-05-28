@@ -42,7 +42,7 @@ router.get('/data/hotels.json', function(req, res){
             var query = "SELECT * from hotels";
         }else{
             //this should be santised for prevention against SQL and XSS injection techniques, will get to that later
-             var query = "SELECT * from hotels WHERE title LIKE '"+searchQuery+"%'";
+             var query = "SELECT * from hotels WHERE title LIKE '%"+searchQuery+"%'";
         }
         connection.query(query, function(err, results){
             connection.release(); //release connection
